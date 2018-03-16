@@ -1,7 +1,9 @@
-Tone Anaylzer 
-- [Examples](https://github.com/watson-developer-cloud/python-sdk/blob/master/examples/tone_analyzer_v3.py)
-- [API Walkthrough](https://www.ibm.com/watson/developercloud/tone-analyzer/api/v3/?python#api_explorer)
+Tone Anaylzer
+
+*   [Examples](https://github.com/watson-developer-cloud/python-sdk/blob/master/examples/tone_analyzer_v3.py)
+*   [API Walkthrough](https://www.ibm.com/watson/developercloud/tone-analyzer/api/v3/?python#api_explorer)
 
 Get Started:
-- Run yarn install
-- Run yarn start
+
+*   Run yarn install
+*   Run yarn start
