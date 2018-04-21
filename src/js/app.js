@@ -43,7 +43,7 @@ const app = () => {
     controls.update();
     
     scene.add(camera);
-    boxContainer.add(scene);
+    scene.add(boxContainer.object);
 
     const light = new PointLight(0xffffff);
     light.position.set(-10, 15, 50);
@@ -54,8 +54,8 @@ const app = () => {
     tweets.forEach((tweet) => {
         let marble = new Marble(tweet);
         marbles.push(marble);
-        debugger;
-        scene.add(marble.marble);
+
+        scene.add(marble.object);
     })
 
     // Render the scene
@@ -66,7 +66,7 @@ const app = () => {
         renderer.render(scene, camera);
 
         if (t != FLOOR.Y) {
-            marbles.forEach(x => (x.marble.position.y = t));
+            marbles.forEach(x => (x.object.position.y = t));
             t -= 1;
         }
     }

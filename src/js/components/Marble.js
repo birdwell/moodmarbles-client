@@ -17,12 +17,12 @@ class Marble {
 		const phongMaterial = new MeshPhongMaterial({
 			color: mood[tweet.emotion]
 		});
-		this.marble = new Mesh(sphereGeometry, phongMaterial);
+		this.object = new Mesh(sphereGeometry, phongMaterial);
 
 		// Initial Position
-		this.marble.position.x = getRandomInt(-50, 50);
-		this.marble.position.y = 0;
-		this.marble.position.z = getRandomInt(-50, 50);
+		this.object.position.x = getRandomInt(-50, 50);
+		this.object.position.y = 0;
+		this.object.position.z = getRandomInt(-50, 50);
 	}
 }
 
