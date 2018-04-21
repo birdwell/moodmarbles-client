@@ -5,12 +5,13 @@ import {
     PointLight,
     SphereGeometry,
     Mesh,
-    MeshPhongMaterial
+    MeshPhongMaterial,
 } from "three";
+import OrbitControls from 'three-orbitcontrols';
 
 import { updateParticles, createParticles } from "./particles";
 import { getRandomInt } from "./utils";
-import data from "../../data/coffee.json";
+import data from "../data/coffee.json";
 
 const app = () => {
     const WIDTH = window.innerWidth;
@@ -24,11 +25,14 @@ const app = () => {
 
     const scene = new Scene();
     const camera = new PerspectiveCamera(50, WIDTH / HEIGHT);
+    const controls = new OrbitControls(camera);
 
     camera.position.z = 50;
+    controls.update();
+
     scene.add(camera);
 
-    const particleSystem = createParticles();
+    // const particleSystem = createParticles();
     const spheres = [];
 
     const light = new PointLight(0xffffff);
@@ -50,26 +54,21 @@ const app = () => {
 
         sphere.position.x = getRandomInt(-50, 50);
         sphere.position.y = getRandomInt(-50, 50);
+        sphere.position.z = getRandomInt(-50, 50);
         sphere.rotation.set(0.4, 0.2, 0);
 
         spheres.push(sphere);
         scene.add(sphere);
     });
 
-    scene.add(particleSystem);
+    // scene.add(particleSystem);
 
-    let t = 0;
     render();
 
     // Render the scene
     function render() {
         requestAnimationFrame(render);
-        t += 0.03;
-        spheres.forEach(s => {
-            s.rotation.y += 0.01;
-            s.position.z = -7 * Math.sin(t * 2);
-        });
-        updateParticles(particleSystem);
+        // updateParticles(particleSystem);
         renderer.render(scene, camera);
     }
 };
