@@ -3,6 +3,7 @@ export default {
         "browser": true,
         "es6": true
     },
+    "packageManager": "yarn",
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"
